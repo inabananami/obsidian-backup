@@ -810,7 +810,7 @@ html中，对齐控制属性为`align`和`valign`。分别为水平方向对齐�
 `valign`对齐方式分别为：`top、center、bottom`，对应向上对齐，居中，向下对齐。
 #### （3）表格的跨行与跨列
 如图的表格：
-![html_表格的跨行与跨列.png](./html_表格的跨行与跨列.jpg)
+![html_表格的跨行与跨列.png](https://github.com/inabananami/obsidian-backup/blob/main/text-folder/html%E7%AC%94%E8%AE%B0%E6%95%B4%E5%90%88/html_%E8%A1%A8%E6%A0%BC%E7%9A%84%E8%B7%A8%E8%A1%8C%E5%92%8C%E8%B7%A8%E5%88%97.png)
 其中的跨行跨列效果是怎么来的呢？
 首先我们拆解这个表格，具体如下：
 
