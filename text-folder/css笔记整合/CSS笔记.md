@@ -1,4 +1,4 @@
-通过[[HTML笔记]]的学习，我们掌握了基础的html语法，学习css则是为了添加更多样式，使网页样式更加丰富好看。
+通过[HTML笔记](https://github.com/inabananami/obsidian-backup/blob/main/text-folder/html%E7%AC%94%E8%AE%B0%E6%95%B4%E5%90%88/HTML%E7%AC%94%E8%AE%B0.md)的学习，我们掌握了基础的html语法，学习css则是为了添加更多样式，使网页样式更加丰富好看。
 # 一、css基础
 ## 1）css的编写位置
 ### 1、位置1：行内样式
