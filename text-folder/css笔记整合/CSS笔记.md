@@ -1,4 +1,4 @@
-通过[HTML笔记](https://github.com/inabananami/obsidian-backup/blob/main/text-folder/html%E7%AC%94%E8%AE%B0%E6%95%B4%E5%90%88/HTML%E7%AC%94%E8%AE%B0.md)的学习，我们掌握了基础的html语法，学习css则是为了添加更多样式，使网页样式更加丰富好看。
+通过[[HTML笔记]]的学习，我们掌握了基础的html语法，学习css则是为了添加更多样式，使网页样式更加丰富好看。
 # 一、css基础
 ## 1）css的编写位置
 ### 1、位置1：行内样式
@@ -1022,7 +1022,160 @@ h4 {
 }
 ```
 色环图：
-![色环图.png](https://github.com/inabananami/obsidian-backup/blob/main/text-folder/css%E7%AC%94%E8%AE%B0%E6%95%B4%E5%90%88/%E8%89%B2%E7%8E%AF%E5%9B%BE.png)
-
+![[色环图.png]]
 跟据图可以确定上述颜色，其中第一个格子为色环图的角度，第二个格子为颜色的亮度，第三个格子为颜色的饱和度。
 一般取亮度为100%，取饱和度为50%。
+# 五、常用的文本属性
+## 1）字体大小
+在这里指字体框的大小。chrome中字体大小默认为16px（可以自己调），在旧版本中比16px小的大小均为16px，在firefox可以显示小于16px的文本。
+- 代码示例：
+```css
+body {
+	font-size: 30px;
+}
+```
+## 2）字体族
+指的是字体种类，可以自行调整想要的字体，并作用于网站的文本。
+### （1）单个字体
+比如说我们想要将网站的默认字体调为微软雅黑，有下列两种方法：
+- 第一种方法（不推荐）：
+```css
+* {
+	font-family: "微软雅黑";
+}
+```
+
+- 第二种方法（推荐）：
+```css
+* {
+	font-family: "Microsoft YaHei";
+}
+```
+这样我们的网站默认字体为微软雅黑。
+### （2）多个字体
+如果我们想让网站有多个备选字体，我们可以：
+```css
+* {
+	font-family: "Source Han Mono","Source Han Serif TW VF","Microsoft YaHei";
+}
+```
+这样我们的网站第一字体为思源等宽，第二字体是思源黑体，第三字体为微软雅黑。如果用户电脑无第一字体，则切换为第二字体；若无第二字体，则切换为第三字体。
+## 3）字体样式
+### （1）字体自带斜体
+如果想要字体自带斜体，我们可以：
+```css
+.game1 {
+	font-family: "Microsoft YaHei";
+	font-style: italic;
+}
+```
+这样文本就为斜体。
+### （2）人为斜体
+如果人为地让字体倾斜，我们可以：
+```css
+.game3 {
+	font-style: oblique;
+}
+.game4 {
+	font-style: oblique 45deg;
+}
+```
+通过第二个选择器，我们可以得知，oblique的倾斜角度是可以变换的，可以变为90°，可以为20°。
+### （3）消除某些文本的默认样式
+如果我们导入`<em>`标签，但是不想要斜体的样式，我们可以：
+```css
+em {
+	font-style: normal;
+}
+```
+这样`<em>`中的文本就不是斜体了。
+## 4）字体粗细
+字体的粗细可以用以下值来调整：
+
+| 常用值        | 意思      |
+| ---------- | ------- |
+| `lighter`  | 细       |
+| `normal`   | 常规      |
+| `bold`     | 加粗      |
+| 特定数字如`600` | 加粗、细、常规 |
+具体的精细程度看字体的适配如何，一般只有前面三档。
+## 5）字体的复合属性
+代码示例：
+```css
+.quote1 {
+	font: normal 60px "BIZ UDPゴシック";
+}
+em {
+	font:italic bold 80px "ArenaCondensed Italic";
+}
+```
+我们的字体属性就可以叠加在一个样式栏里，但是要确定后两个一定是字体大小和字体族，不能是其他属性。
+# 六、常用的文本属性
+## 1）文本颜色
+```css
+div {
+	color: red;
+}
+```
+略。
+## 2）文本间隔
+代码示例：
+```css
+.dang {
+	color: #880000;
+	font-weight: bold;
+	font-size: 45px;
+	letter-spacing: 50px;
+}
+.quote1 {
+	color: #84C36E;
+	/* 英語単語の間隔、日本語には適用しません、字ごとスペースを入力して効果があります */
+	word-spacing: 10px;
+}
+```
+`letter-spacing`，是单个字符间的间距。
+`word-spacing`，是英语单词之间的间距，触发条件为空格，不适用于中文。
+后者硬要应用于中文或者日文，只能采用这个方式：
+```html
+<div class="quote1">あ な た は 間 違 い な く、エ マ ち ゃ ん 推 し な ん で す ね</div>
+```
+## 3）文本修饰
+代码示例：
+- 例一：绿色的上波形线：
+```css
+.site1 {
+	text-decoration: overline wavy green;
+}
+```
+- 例二：灰色的点形下划线：
+```css
+.site2 {
+	text-decoration: underline dotted #777777;
+}
+```
+- 例三：删除线：
+```css
+.site3 {
+	text-decoration: line-through;
+}
+```
+- 例四：啥都没有（消除文本标签的默认样式用）：
+```css
+.site4 {
+	text-decoration: none;
+}
+```
+## 4）文本缩进
+代码示例：
+```css
+div {
+	font-size: 60px;
+	text-indent: 120px;
+}
+```
+代表文本缩进了两格。
+## 5）文本对齐 —— 水平
+代码示例：
+```css
+
+```
