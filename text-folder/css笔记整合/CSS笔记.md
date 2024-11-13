@@ -1178,5 +1178,48 @@ div {
 ## 5）文本对齐 —— 水平
 代码示例：
 ```css
-
+div {
+	text-align: right;
+}
 ```
+意思为水平向右对齐，有`left center right`三种选项。
+## 6）细说font-size
+font-size其实不完全等同于字体大小，而是字体框的大小。字体框的大小视不同的字体各异。
+## 7）行高
+根据 **6)** 中的原理，行高就是在字体框的基础上，以设定的比例设定一行文本的高度。
+- 写法一 —— 数值为像素：
+```css
+#nihonngo1 {
+	font-size: 40px;
+	background-color: #ED7D9588;
+	line-height: 100px;
+}
+```
+- 写法二 —— 值为normal：
+```css
+#nihonngo1 {
+	font-size: 40px;
+	background-color: #ED7D9588;
+	line-height: normal;
+}
+```
+- 写法三 —— 值为数字（常用）：
+```css
+#nihonngo1 {
+	font-size: 40px;
+	background-color: #ED7D9588;
+	line-height: 1.5;
+}
+```
+- 写法四 —— 值为百分比：
+```css
+#nihonngo1 {
+	font-size: 40px;
+	background-color: #ED7D9588;
+	line-height: 150%;
+}
+```
+当值为固定的像素数值时，行高不会随着字体大小的变化而变化；当值为数字的时候，则会随着字体大小的变化而变化。
+
+**注意事项：
+1. 行高不能过小，最好比字体大小高一点。行高过小，会造成文字重叠，背景颜色消失。
