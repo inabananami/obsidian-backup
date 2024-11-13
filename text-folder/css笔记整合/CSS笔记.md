@@ -1223,3 +1223,36 @@ font-size其实不完全等同于字体大小，而是字体框的大小。字�
 
 **注意事项：**
 1. 行高不能过小，最好比字体大小高一点。行高过小，会造成文字重叠，背景颜色消失。
+例：
+```css
+#nihonngo1 {
+	font-size: 40px;
+	background-color: skyblue;
+	line-height: 0px;
+}
+```
+2. 行高具有继承性。
+例：
+```css
+#nihonngo2 {
+	font-size: 40px;
+	background-color: orange;
+	line-height: 1.5;
+}
+span {
+	color: red;
+	font-size: 100px;
+}
+```
+```html
+<div id="nihonngo2">
+	日本語はすべて女子声優から学んだ！
+	日本語はすべて女子声優から学んだ！
+	日本語はすべて女子声優から学んだ！
+	日本語はすべて<span>女子声優</span>から学んだ！
+	日本語はすべて女子声優から学んだ！
+	日本語はすべて女子声優から学んだ！
+	日本語はすべて女子声優から学んだ！
+	日本語はすべて女子声優から学んだ！
+</div>
+```
