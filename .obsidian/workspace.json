@@ -1,0 +1,197 @@
+{
+  "main": {
+    "id": "e2c6659dbfa76eaf",
+    "type": "split",
+    "children": [
+      {
+        "id": "8824ebbd132074f0",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "40654058891fc0f8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "js笔记/js笔记.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "js笔记"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "b0ae9f6e1a02c37f",
+    "type": "split",
+    "children": [
+      {
+        "id": "cf33533540d3d601",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "aced52a42e187b11",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-folder-closed",
+              "title": "ファイルエクスプローラ"
+            }
+          },
+          {
+            "id": "bf622125b010ee33",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "検索"
+            }
+          },
+          {
+            "id": "3990378f6f4f30e6",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 205.5,
+    "collapsed": true
+  },
+  "right": {
+    "id": "f4d29ebe4060fc24",
+    "type": "split",
+    "children": [
+      {
+        "id": "b217a6b146670a3a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "026b30849206d547",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "js笔记/js笔记.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "js笔记へのバックリンク"
+            }
+          },
+          {
+            "id": "c8122c1506974d93",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "HTML笔记.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "HTML笔记 的出链列表"
+            }
+          },
+          {
+            "id": "2d1f7ed0261c7bcc",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "970b31e75a768800",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "js笔记/js笔记.md"
+              },
+              "icon": "lucide-list",
+              "title": "js笔记のアウトライン"
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:クイックスイッチャーを開く": false,
+      "graph:グラフビューを開く": false,
+      "canvas:新規キャンバスを作成": false,
+      "daily-notes:今日のデイリーノートを開く": false,
+      "templates:テンプレートを挿入": false,
+      "command-palette:コマンドパレットを開く": false
+    }
+  },
+  "active": "40654058891fc0f8",
+  "lastOpenFiles": [
+    "obsidian-backup/text-folder/js笔记整合/js笔记.md",
+    "obsidian-backup/text-folder/css笔记整合/色环图.png",
+    "obsidian-backup/text-folder/css笔记整合/CSS笔记（下）.md",
+    "obsidian-backup/text-folder/css笔记整合/CSS笔记（上）.md",
+    "obsidian-backup/text-folder/html笔记整合/HTML笔记.md",
+    "obsidian-backup/text-folder/html笔记整合/html_表格的跨行和跨列.png",
+    "obsidian-backup/text-folder/复盘笔记.md",
+    "obsidian-backup/text-folder/css笔记整合",
+    "obsidian-backup/text-folder/js笔记整合",
+    "obsidian-backup/text-folder/html笔记整合",
+    "obsidian-backup/text-folder",
+    "obsidian-backup/README.md",
+    "obsidian-backup",
+    "html笔记整合/HTML笔记.md",
+    "js笔记/js笔记.md",
+    "复盘笔记.md",
+    "Flex容器.md",
+    "js笔记",
+    "html笔记整合/html_表格的跨行与跨列.png",
+    "無題のファイル 1.md",
+    "css笔记整合/CSS笔记（下）.md",
+    "css笔记整合/CSS笔记（上）.md",
+    "css笔记整合/色环图.png",
+    "無題のファイル.canvas",
+    "css笔记整合",
+    "html笔记整合",
+    "2024-11-02.md",
+    "1、概念.md"
+  ]
+}
