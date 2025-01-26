@@ -1,4 +1,4 @@
-**接js笔记day1内容**[[js笔记day1](https://github.com/inabananami/obsidian-backup/blob/main/js%E7%AC%94%E8%AE%B0/js%E7%AC%94%E8%AE%B0day1.md#10day1%E6%80%BB%E7%BB%83%E4%B9%A0)]
+**接js笔记day1内容**[[js笔记day1](https://github.com/inabananami/obsidian-backup/blob/main/js%E7%AC%94%E8%AE%B0/js%E7%AC%94%E8%AE%B0day1.md)]
 ## 11）运算符
 ### 1. 赋值运算符
 **主要有下列赋值运算符：**
