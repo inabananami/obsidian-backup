@@ -1,4 +1,4 @@
-# 一、js简介与基本语法
+# 一、js简介与基本概念
 js是在浏览器里的编程语言。
 ## 1）示例代码：
 轮播图按钮：
@@ -208,7 +208,7 @@ alert('私は外部のjsファイル')
 	//定数を宣言するとき特定のデータをつけなければならない
 	const PI;
 ```
-## 8）数据类型和算数运算符
+## 8）数据类型
 ### 1.数据类型
 js有以下数据类型：
 **基本数据类型：**
@@ -286,7 +286,112 @@ int age =18;
 ```
 - 此状态下为null型。
 ```js
-        let obj = null;
-        document.write(obj);
+	let obj = null;
+	document.write(obj);
+```
+### 5. 检测数据类型
+- 用typeof可以输出数据的类型
+```js
+	let num = 10;
+	document.write(typeof(num));
 ```
 
+## 9）类型转换
+### 1. 隐式转换
+此处1被悄悄地转换成了string型。
+```js
+	//これで1はstringへ転換した(暗黙の型変換)
+	document.write("pink" + 1);
+```
+有**算数运算符（- \* \\ % ）** 的地方，所有数字被强制转换成**数字型**。
+```js
+	document.write(2 + "2");
+	document.write("<br>");
+	document.write(2 - 2);
+	document.write("<br>");
+	//算術演算子ある場合は、全ての数字はnumber型に転換する
+	document.write(2 - "2");
+```
+同时，**单独的加号（+）** 也能将后面的数字转换为**数字型**。
+```js
+	//number型に転換するため、結果はnumberです
+	document.write(typeof +"100");
+```
+### 2. 显式转换
+直接表明要把某个数据转换为某个类型：
+```js
+	//明示的変換。前には一〇〇一ですが、後には101です
+	document.write("100" + 1);
+	document.write("<br>");
+	document.write(Number("100") + 1);
+```
+还有**parseint()** 与**parseFloat()** 。
+```js
+	//整数以外のデータを除く
+	document.write(parseInt("100は整数です"));
+	document.write("<br>");
+	//浮動小数点数（ふどうしょうすうてんすう）以外のデータを除く
+	document.write(parseFloat("0.111は小数です"));
+```
+## 10）day1总练习
+输入商品价格，商品数量，收获地址，打印出表格。
+**第一步：**
+先写出完整的表格（样式不算）：
+```html
+	<h2>注文支払い確認ページ</h2>
+	<table>
+		<thead>
+			<tr>
+				<th>品物の名称</th>
+				<th>品物の価格</th>
+				<th>品物の数</th>
+				<th>合計金額</th>
+				<th>郵送先住所</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>iPhone 15 Pro Max</td>
+				<td>${price}円</td>
+				<td>${num}</td>
+				<td>${price * num}円</td>
+				<td>${add}</td>
+			</tr>
+		</tbody>
+	</table>
+```
+**第二步：**
+写出js输入代码：
+```js
+	let price = +prompt("品物の価格を入力してください：");
+	let num = +prompt("品物の数を入力してください：");
+	let add = prompt("郵送先住所を入力してください：");
+```
+**第三步：**
+直接将整个表格用模板字符串输出：
+```js
+document.write(`
+	<table>
+		<thead>
+			<tr>
+				<th>品物の名称</th>
+				<th>品物の価格</th>
+				<th>品物の数</th>
+				<th>合計金額</th>
+				<th>郵送先住所</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>iPhone 15 Pro Max</td>
+				<td>${price}円</td>
+				<td>${num}</td>
+				<td>${price * num}円</td>
+				<td>${add}</td>
+			</tr>
+		</tbody>
+	</table>
+`);
+```
+**第四步：**
+删除原表格。
