@@ -122,7 +122,7 @@
 	let b = 2;
 	(a > b) ? document.write(a) : document.write(b);
 ```
-### *3.练习：自动补零*
+### \**3. 练习：自动补零*
 介绍：用户输入1个数，如果数字小于10，则前面进行补0，比如 09 03 等。
 ```js
 	let x = prompt("ある数字を入力してください:");
@@ -155,3 +155,65 @@
 ### *5. 断点调试*
 找到调试器 - 项目html文件，右键代码行数栏，选择添加断点。就可以看到num在代码行中的数值。
 ![[断点测试.png]](https://github.com/inabananami/obsidian-backup/blob/main/js%E7%AC%94%E8%AE%B0/%E6%96%AD%E7%82%B9%E6%B5%8B%E8%AF%95.png)
+### 6. while循环
+**while循环：** 在上面**练习：自动补零**中已经说明。
+![[#*3.练习：自动补零*]]
+### \**7.while循环练习*
+**要求1：在页面内输出1-100**
+```js
+	//1.スクリーンで1から100まで出力します。
+	let x= 1;
+	while (x <= 100) {
+		document.write(x++);
+		document.write(" ");
+	}
+```
+**要求2：在页面内输出1-100累加和**
+```js
+	//2.スクリーンで1から100までの和を出力します。
+	let y = 1;
+	let sum = 0;
+	while (y <= 100) {
+		sum += y;
+		y++;
+	}
+	document.write(sum);
+```
+**要求3：在页面输出1-100的偶数和**
+```js
+	//3.スクリーンで1から100までの偶数和を出力します。
+	let z = 1;
+	let sum2 = 0;
+	while (z <= 100) {
+		if (z % 2 == 0) {
+		sum2 += z;
+		}
+		z++;
+	}
+	document.write(sum2);
+```
+### 8. 退出循环
+1. **continue：** 继续下一个循环，不终止循环。
+2. **break：** 退出当前的循环。
+```js
+	//例（前のものは4前のデータだけ出力しますが、最後のには5だけ出力しない）
+	let sum = 0;
+	for (let i = 0; i < 10; i++) {
+		if(i == 5) {
+			break;
+		}
+		document.write(i);
+	}
+	document.write("<br>");
+	for (let i = 0; i < 10; i++) {
+		if(i == 5) {
+			continue;
+		}
+		document.write(i);
+	}
+```
+### 9. 综合案例 —— 简易ATM
+需求：用户可以选择存钱、取钱、查看余额和退出功能。
+```js
+
+```
