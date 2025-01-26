@@ -154,4 +154,4 @@
 ```
 ### *5. 断点调试*
 找到调试器 - 项目html文件，右键代码行数栏，选择添加断点。就可以看到num在代码行中的数值。
-![[断点测试.png]]
+![[断点测试.png]](https://github.com/inabananami/obsidian-backup/blob/main/js%E7%AC%94%E8%AE%B0/%E6%96%AD%E7%82%B9%E6%B5%8B%E8%AF%95.png)
