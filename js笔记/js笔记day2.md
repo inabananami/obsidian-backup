@@ -153,4 +153,4 @@
 	}
 ```
 ### *5. 断点调试*
-找到调试器 - 项目html文件，![[断点测试.png]]
+找到调试器 - 项目html文件，![[断点测试.png]](https://github.com/inabananami/obsidian-backup/blob/main/js%E7%AC%94%E8%AE%B0/%E6%96%AD%E7%82%B9%E6%B5%8B%E8%AF%95.png)
