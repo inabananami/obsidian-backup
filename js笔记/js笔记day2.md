@@ -212,8 +212,113 @@
 		document.write(i);
 	}
 ```
-### 9. 综合案例 —— 简易ATM
+### *9. 综合案例 —— 简易ATM*
 需求：用户可以选择存钱、取钱、查看余额和退出功能。
 ```js
+let mode;
+let input;
+let output;
+let search;
+while(true) {
+	mode = +prompt(`
+	操作を選択してください：
+		1. お預け入れ
+		2. お引き出し
+		3. 残高を見る
+		4. キャンセル
+	`);
+	while (mode > 4 || mode < 0) {
+		mode = +prompt("エラーが発生しました。もう一度入力してください：");
+	}
+	if (mode == 4) {
+		alert("ご利用ありがとうございます！");
+		break;
+	}
+	switch (mode) {
+		case 1:
+			input = +prompt("お預け入れの金額を確認してください：");
+			while(input < 0) {
+				input = +prompt("エラーが発生しました。もう一度入力してください：");
+			}
+			alert("ご利用ありがとうございます！");
+			break;
+		case 2:
+			output = +prompt("お引き出しの金額を確認してください：");
+			if(output > input || input <= 0) {
+				alert("残高が足りておりません。あなたの残高は："+input+"円でございます。");
+			}
+			else {
+				input -= output;
+				alert("完了致しました。お金を忘れないようにしてください。");
+			}
+			break;
+		case 3:
+			alert("あなたの残高は："+input+"円でございます。");
+			break;
+	}
+}
+```
+### 10. for循环
+见下链接
+![[#8. 退出循环]]
+### 11. 遍历数组
+同c语言，但可以比c语言更加简单，如**js笔记day1/1.数组的基本使用**中的
+![[js笔记day1#1.数组的基本使用]]
 
+```js
+	//配列の宣言
+	let num = [];
+	//配列の割り当て
+	num = [1,2,3];
+	//配列の出力
+	for(let i = 0; i < num.length; i++) {
+		document.write(num[i]," ");
+	}
+
+	//文字があるなら、これで割り当てる
+	let name = ["佐藤さん","戸山さん","上原さん"];
+	for(let j = 0; j < name.length; j++) {
+		document.write(name[j]," ");
+	}
+```
+### 12. 循环嵌套
+```js
+	let num= [];
+	num = [[1,2,3],[4,5,6],[7,8,9]];
+	for(let i = 0; i < 3; i++) {
+		for(let j = 0; j < 3;j++) {
+			document.write(num[i][j]+"<br>");
+		}
+	}
+```
+### *13.循环嵌套大练习*
+需求1：页面中打出5行5列的星星。
+```js
+	//5行5列の星を印刷する
+	for(let i = 0;i < 5;i++) {
+		for(let j = 0;j < 5; j++) {
+			document.write("★");
+		}
+		document.write("<br>");
+	}
+```
+需求2：在需求1的基础上，加入用户输入行数功能，打出对应的星星。
+```js
+	//ユーザー入力機能を追加する
+	let row = +prompt("列数を入力してください：");
+	let line = +prompt("行数を入力してください：");
+	while(row <= 0) {
+		row = +prompt("エラーが発生しました。列数をもう一度入力してください：");
+	}
+	while(line <= 0) {
+		line = +prompt("エラーが発生しました。行数をもう一度入力してください：");
+	}
+	alert(`あなたが印刷したい星は${line}行${row}列です。`)
+	//5行5列の星を印刷する
+	for(let i = 0;i < row;i++) {
+		for(let j = 0;j < line; j++) {
+			document.write("★");
+		}
+		document.write("<br>");
+	}
 ```
