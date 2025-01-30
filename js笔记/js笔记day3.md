@@ -158,5 +158,74 @@
 ```
 ### 6. 删除
 ```js
-
+	let arr = new Array(2,0,6,1,77,0,25,7);
+	//これは配列の最後の要素を削除する方法です
+	arr.pop();
+	document.write(arr);
+	document.write("<br>");
+	//これは配列の最初の要素を削除する方法です
+	arr.shift();
+	document.write(arr);
+	document.write("<br>");
+	//一つの属性は配列の位置であり、二つの属性は削除したい要素の数です
+	// arr.splice(start, 2);
+	arr.splice(3,2);
+	document.write(arr);
 ```
+### *7.实例：输出柱形图*
+需求：输入第一二三四季度数据，输出相应的柱形图。
+**css样式：**
+```css
+	* {padding: 0;margin: 0;}
+	.outer_box {
+		display: flex;
+		width: 700px;
+		height: 300px;
+		border-left: 1px solid pink;
+		border-bottom: 1px solid pink;
+		margin: 50px auto;
+		justify-content: space-around;
+		/* itemを底に整列にする */
+		align-items: flex-end;
+		text-align: center;
+	}
+	.outer_box>div {
+		display: flex;
+		width: 50px;
+		background-color: pink;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+	.outer_box div span {
+		margin-top: -20px;
+	}
+	.box div {
+		width: 70px;
+		margin-left: -10px;
+	}
+	h4 {
+		width: 80px;
+		margin-left: -12px;
+		margin-bottom: -35px;
+	}
+```
+**js代码：**
+```js
+	let arr = [];
+	for(let i = 1; i<=4;i++){
+		arr.push(+prompt(`第${i}四半期のデータを入力してください：`));
+	}
+	console.log(arr);
+	document.write(`<div class="outer_box">`);
+	for(let i = 0; i < arr.length; i++) {
+		document.write(`        
+			<div style="height: ${arr[i]}px;">
+				<span>${arr[i]}</span>
+				<h4>第${i + 1}四半期</h4>
+			</div>
+		`);
+	}
+	document.write(`</div>`);
+```
+效果：
+[输出柱状图.png]()
