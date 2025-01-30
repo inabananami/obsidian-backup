@@ -1,4 +1,4 @@
-**接js笔记day1内容**[[js笔记day1](https://github.com/inabananami/obsidian-backup/blob/main/js%E7%AC%94%E8%AE%B0/js%E7%AC%94%E8%AE%B0day1.md)]
+**接js笔记day1内容**[js笔记day1](https://github.com/inabananami/obsidian-backup/blob/main/js%E7%AC%94%E8%AE%B0/js%E7%AC%94%E8%AE%B0day1.md)
 ## 11）运算符
 ### 1. 赋值运算符
 **主要有下列赋值运算符：**
@@ -257,68 +257,4 @@ while(true) {
 			break;
 	}
 }
-```
-### 10. for循环
-见下链接
-![[#8. 退出循环]]
-### 11. 遍历数组
-同c语言，但可以比c语言更加简单，如**js笔记day1/1.数组的基本使用**中的
-![[js笔记day1#1.数组的基本使用]]
-
-```js
-	//配列の宣言
-	let num = [];
-	//配列の割り当て
-	num = [1,2,3];
-	//配列の出力
-	for(let i = 0; i < num.length; i++) {
-		document.write(num[i]," ");
-	}
-
-	//文字があるなら、これで割り当てる
-	let name = ["佐藤さん","戸山さん","上原さん"];
-	for(let j = 0; j < name.length; j++) {
-		document.write(name[j]," ");
-	}
-```
-### 12. 循环嵌套
-```js
-	let num= [];
-	num = [[1,2,3],[4,5,6],[7,8,9]];
-	for(let i = 0; i < 3; i++) {
-		for(let j = 0; j < 3;j++) {
-			document.write(num[i][j]+"<br>");
-		}
-	}
-```
-### *13.循环嵌套大练习*
-需求1：页面中打出5行5列的星星。
-```js
-	//5行5列の星を印刷する
-	for(let i = 0;i < 5;i++) {
-		for(let j = 0;j < 5; j++) {
-			document.write("★");
-		}
-		document.write("<br>");
-	}
-```
-需求2：在需求1的基础上，加入用户输入行数功能，打出对应的星星。
-```js
-	//ユーザー入力機能を追加する
-	let row = +prompt("列数を入力してください：");
-	let line = +prompt("行数を入力してください：");
-	while(row <= 0) {
-		row = +prompt("エラーが発生しました。列数をもう一度入力してください：");
-	}
-	while(line <= 0) {
-		line = +prompt("エラーが発生しました。行数をもう一度入力してください：");
-	}
-	alert(`あなたが印刷したい星は${line}行${row}列です。`)
-	//5行5列の星を印刷する
-	for(let i = 0;i < row;i++) {
-		for(let j = 0;j < line; j++) {
-			document.write("★");
-		}
-		document.write("<br>");
-	}
 ```

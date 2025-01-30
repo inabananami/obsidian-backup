@@ -173,22 +173,26 @@ alert('私は外部のjsファイル')
 	var num = 20;
 	document.write(" , ",num);
 ```
-## 6）数组
+## 6）数组简介
 ### 1.数组的基本使用
 ```js
 	//配列の宣言
 	let num = [];
 	//配列の割り当て
 	num = [1,2,3];
-	//配列の出力
-	for(let i = 0; i < 3; i++) {
+	//配列の出力1
+	for(let i = 0; i < num.length; i++) {
 		document.write(num[i]," ");
 	}
+	document.write("<br>");
+	//配列の出力2
+	document.write(num);
+			document.write("<br>");
 
-        //文字があるなら、これで割り当てる
-        let name = ["佐藤さん","戸山さん","上原さん"];
-
-	//配列の長さはこれで示す
+	//文字があるなら、これで割り当てる
+	let name = ["佐藤さん","戸山さん","上原さん"];
+	document.write(name);
+	document.write("<br>");
 	document.write(name.length);
 ```
 ## 7）常量
