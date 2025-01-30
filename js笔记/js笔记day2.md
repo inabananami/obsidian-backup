@@ -258,3 +258,34 @@ while(true) {
 	}
 }
 ```
+### 10. 冒泡排序
+如代码所示：
+```js
+	let arr = [4,4,1,9,5,6,7,8];
+	let temp = arr[0];
+	document.write(arr);
+	document.write("<br>");
+	//降順ソート
+	for(let i = 0; i < arr.length; i++) {
+		for(let j = 0; j < arr.length - i - 1;j++){
+			if(arr[j] < arr[j + 1]) {
+				temp = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = temp;
+			}
+		}
+	}
+	document.write(arr);
+	document.write("<br>");
+	//昇順ソート
+	for(let i = 0; i < arr.length; i++) {
+		for(let j = 0; j < arr.length - i - 1;j++){
+			if(arr[j] > arr[j + 1]) {
+				temp = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = temp;
+			}
+		}
+	}
+	document.write(arr);
+```
