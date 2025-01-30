@@ -329,7 +329,7 @@ int age =18;
 	document.write("<br>");
 	document.write(Number("100") + 1);
 ```
-还有**parseint()** 与**parseFloat()** 。
+还有**parseInt()** 与**parseFloat()** 。
 ```js
 	//整数以外のデータを除く
 	document.write(parseInt("100は整数です"));
