@@ -1,8 +1,8 @@
 接day2内容[js笔记day2](https://github.com/inabananami/obsidian-backup/blob/main/js%E7%AC%94%E8%AE%B0/js%E7%AC%94%E8%AE%B0day2.md)
-### 10. for循环
+### 11. for循环
 见下链接
 ![[#8. 退出循环]]
-### 11. 遍历数组
+### 12. 遍历数组
 同c语言，但可以比c语言更加简单，如**js笔记day1/1.数组的基本使用**中的
 ![[js笔记day1#1.数组的基本使用]]
 
@@ -22,7 +22,7 @@
 		document.write(name[j]," ");
 	}
 ```
-### 12. 循环嵌套
+### 13. 循环嵌套
 ```js
 	let num= [];
 	num = [[1,2,3],[4,5,6],[7,8,9]];
@@ -32,7 +32,7 @@
 		}
 	}
 ```
-### *13.循环嵌套大练习*
+### *14.循环嵌套大练习*
 需求1：页面中打出5行5列的星星。
 ```js
 	//5行5列の星を印刷する
@@ -85,6 +85,36 @@
 		}
 	</script>
 ```
+### 10. 逻辑中断
+**1. 逻辑运算符里的短路**
+- 短路：只存在于 && 和 || 中，当满足一定条件会让右边代码不执行：
+<table width="500px">
+	<thead>
+		<th>符号</th>
+		<th>短路条件</th>
+	</thead>
+	<tbody>
+		<tr>
+			<td>&&</td>
+			<td>左边为false就短路</td>
+		</tr>
+		<tr>
+			<td>||</td>
+			<td>左边为true就短路</td>
+		</tr>
+	</tbody>
+</table>
+例子：
+```js
+	let age = 18;
+	console.log(false && age++);
+	console.log(age);
+	
+	console.log(true || age++);
+	console.log(age);
+```
+### 11. 转换为boolean型
+其中,\`\`,0, undefined, NaN,  null等，转换为boolean都为false，其余都为true。
 ## 13）数组
 ### 1. 输出数组和和平均值
 声明语法：
