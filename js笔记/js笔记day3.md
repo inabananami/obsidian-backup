@@ -258,4 +258,4 @@
 	document.write(`</div>`);
 ```
 效果：
-![[输出柱状图.png]](https://github.com/inabananami/obsidian-backup/blob/main/js%E7%AC%94%E8%AE%B0/%E8%BE%93%E5%87%BA%E6%9F%B1%E7%8A%B6%E5%9B%BE.png)
+<img src="./输出柱状图.png">
