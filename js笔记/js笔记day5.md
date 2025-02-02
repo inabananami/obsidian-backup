@@ -172,4 +172,4 @@
 </html>
 ```
 效果如下：
-![[输出学生信息表.png]]
+![[输出学生信息表.png]](https://github.com/inabananami/obsidian-backup/blob/main/js%E7%AC%94%E8%AE%B0/%E8%BE%93%E5%87%BA%E5%AD%A6%E7%94%9F%E4%BF%A1%E6%81%AF%E8%A1%A8.png)
