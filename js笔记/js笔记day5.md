@@ -173,3 +173,130 @@
 ```
 效果如下：
 ![[输出学生信息表.png]](https://github.com/inabananami/obsidian-backup/blob/main/js%E7%AC%94%E8%AE%B0/%E8%BE%93%E5%87%BA%E5%AD%A6%E7%94%9F%E4%BF%A1%E6%81%AF%E8%A1%A8.png)
+### 6. 内置对象
+以下是主要的内置对象：
+```js
+	//Mathという組込みオブジェクト
+	//属性
+	console.log(Math.PI);
+	//方法
+	//ceil  とは、上を向けて整数を取るものです
+	console.log(Math.ceil(1.5));    //2
+	console.log(Math.ceil(1.8));    //2
+	//floor  とは、下に向けて整数をとるものです
+	console.log(Math.floor(1.5));   //1
+	console.log(Math.floor(1.8));   //1
+	//round とは、四捨五入にするものです
+	console.log(Math.round(1.5));   //2
+	console.log(Math.round(1.1));   //1
+	//max とは、数の中の最も大きいものを出力ものです
+	console.log(Math.max(1,2,4,5,6,7,9));
+```
+### 7. 随机数函数
+```js
+	//1から10までのランダム数を出力する
+	document.write(Math.floor(Math.random() * 11));
+	document.write("<br>")
+	//5から10までのランダム数を出力する
+	document.write(Math.floor(Math.random() * 6)) + 5;
+	//NからMまでのランダム数を出力する
+	// document.write(Math.floor(Math.random() * (M-N+1))) + N;
+```
+### *8. 例1：随机点名*
+```js
+	let arr = ["佐藤さん","上原さん","前田さん","市ヶ谷さん","戸山さん","山吹さん","大西さん","大塚さん","鴨志田さん"];
+	let i = Math.floor(Math.random() * (arr.length));
+	document.write(`<div>${arr[i]}</div>`);
+	//splice(start(array_num), delete (num) elements)
+	//氏名を当たるなら削除する
+	arr.splice(i,1);
+	document.write("<br>");
+	document.write(arr);
+```
+### *9. 例2：猜数字游戏*
+需求：程序随机生成1~10之间的一个数字，用户输入一个数字
+1. 如果大于该数字，就提示“数字猜大了”，继续猜
+2. 如果小于该数字，就提示“数字猜小了”，继续猜
+3. 如果猜对了，就提示猜对了，程序结束
+```js
+	let flag = 1;
+	while (flag == 1) {
+		let num = Math.floor(Math.random() * (9 + 1)) + 1;
+		console.log(num);
+		let guess = +prompt(`当てる数字を入力してください:`);
+		while (guess != num) {
+			if(guess > num) {
+				guess = +prompt(`数字が大きすぎる。もう一度入力してください:`);
+			}
+			else if(guess < num) {
+				guess = +prompt(`数値がを小さいすぎる。もう一度入力してください:`);
+			}
+		}
+		if(guess == num) {
+				alert(`当たったね！おめでとう！`);
+		}
+		flag = +prompt(`1を推したら、もう一度プレイする；2を推すと、退出する`);
+	}
+```
+### *10. 例3：生成随机颜色*
+需求：flag为true，生成hex颜色；flag为false，生成rgb颜色：
+代码如下：
+```js
+function getRandomColor(flag) {
+	if(flag) {
+		let color = "#";
+		for(let i = 1; i <= 6; i++) {
+			let random_color = Math.floor(Math.random() * 16);
+			if(random_color < 10) {
+				color += random_color;
+			}
+			else if(random_color >=10 && random_color <= 15) {
+				switch(random_color) {
+					case 10:
+						random_color = "A";
+						color += random_color;
+						break;
+					case 11:
+						random_color = "B";
+						color += random_color;
+						break;
+					case 12:
+						random_color = "C";
+						color += random_color;
+						break;
+					case 13:
+						random_color = "D";
+						color += random_color;
+						break;
+					case 14:
+						random_color = "E";
+						color += random_color;
+						break;
+					case 15:
+						random_color = "F";
+						color += random_color;
+						break;
+				}
+			}
+		}
+	return color;
+	}
+	else {
+		let color2 = "rgb(";
+		for(let i = 1; i <= 3; i++) {
+			let random_color2 = Math.floor(Math.random() * 256);
+			color2 += random_color2;
+			if (i < 3) {
+				color2 += ", ";
+			}
+		}
+		color2 += ")";
+	return color2;
+	}
+}
+document.write(getRandomColor(true));
+document.write("<br>");
+document.write(getRandomColor(false));
+document.write(`<div style="height: 200px; width: 200px; background-color: ${getRandomColor(true)}"></div>`);
+document.write(`<div style="height: 200px; width: 200px; background-color: ${getRandomColor(false)}"></div>`);
+```
