@@ -1,3 +1,5 @@
+接day4内容：[[js笔记day4]]
+GitHub外部链接：[js笔记day4](https://github.com/inabananami/obsidian-backup/blob/main/js%E7%AC%94%E8%AE%B0/js%E7%AC%94%E8%AE%B0day4.md)
 ## 15）对象
 ### 1. 对象声明语法
 ```js
@@ -173,6 +175,7 @@
 ```
 效果如下：
 <img src="./输出学生信息表.png" alt="">
+
 以下是主要的内置对象：
 ```js
 	//Mathという組込みオブジェクト

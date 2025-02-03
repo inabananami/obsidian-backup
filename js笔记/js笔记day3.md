@@ -1,4 +1,5 @@
-接day2内容[js笔记day2](https://github.com/inabananami/obsidian-backup/blob/main/js%E7%AC%94%E8%AE%B0/js%E7%AC%94%E8%AE%B0day2.md)
+接day2内容：[[js笔记day2]]
+GitHub外部链接：[js笔记day2](https://github.com/inabananami/obsidian-backup/blob/main/js%E7%AC%94%E8%AE%B0/js%E7%AC%94%E8%AE%B0day2.md)
 ### 11. for循环
 见下链接
 ![[#8. 退出循环]]
