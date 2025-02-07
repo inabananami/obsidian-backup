@@ -1,4 +1,4 @@
-<a href="https://github.com/inabananami/obsidian-backup/blob/main/java%E7%AC%94%E8%AE%B0/Java%E7%AC%94%E8%AE%B0day1.md">接day1笔记</a>
+<a href="https://github.com/inabananami/obsidian-backup/blob/main/java%E7%AC%94%E8%AE%B0/Java%E7%AC%94%E8%AE%B0day1.md">接day1笔记 ></a>
 # 一、运算符与API
 ## 1）二进制，八进制与十六进制
 在数字电路这门课中已讲，故不赘述。
