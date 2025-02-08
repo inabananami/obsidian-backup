@@ -1,4 +1,4 @@
-开始WEBAPIs的学习。
+在 [js基础](./js笔记day5)的基础上，开始WEBAPIs的学习。
 ### 前言. 变量声明
 1. 在`var,let,const`之中，建议用const。
 # 一、DOM和BOM

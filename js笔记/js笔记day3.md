@@ -2,11 +2,10 @@
 GitHub外部链接：[js笔记day2](https://github.com/inabananami/obsidian-backup/blob/main/js%E7%AC%94%E8%AE%B0/js%E7%AC%94%E8%AE%B0day2.md)
 ### 11. for循环
 见下链接
-![[#8. 退出循环]]
+[退出循环](./js笔记day2#8.退出循环)
 ### 12. 遍历数组
-同c语言，但可以比c语言更加简单，如**js笔记day1/1.数组的基本使用**中的
-![[js笔记day1#1.数组的基本使用]]
-
+同c语言，但可以比c语言更加简单，如**js笔记day1/1.数组的基本使用：**
+[数组的基本使用](./js笔记day1#1.数组的基本使用)
 ```js
 	//配列の宣言
 	let num = [];

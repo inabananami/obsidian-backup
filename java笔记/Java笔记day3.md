@@ -1,4 +1,4 @@
-<a href="https://github.com/inabananami/obsidian-backup/blob/main/java%E7%AC%94%E8%AE%B0/Java%E7%AC%94%E8%AE%B0day2.md">接day2笔记 ></a>
+[接day2笔记 >](./Java笔记day2)
 # 一、语句
 ## 1）分支结构
 ### 1. 单个if语句
