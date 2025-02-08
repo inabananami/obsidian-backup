@@ -135,6 +135,7 @@ GitHub外部链接：[js笔记day6](https://github.com/inabananami/obsidian-back
 - key
 	- 用户按下的键盘键的值
 	- 现在不提倡使用keyCode
+
 代码示例：
 ```js
 	const input = document.querySelector("input");
