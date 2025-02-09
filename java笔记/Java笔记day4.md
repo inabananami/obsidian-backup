@@ -1,4 +1,4 @@
-[接java笔记day3 >](./Java笔记day3)
+[接java笔记day3 >](./Java笔记day3.md)
 # 一、方法
 ## 1）方法概述
 方法的定义与运用如下：
