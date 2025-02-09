@@ -1,5 +1,4 @@
-接day3内容：[[js笔记day3]]
-GitHub外部链接：[js笔记day3](https://github.com/inabananami/obsidian-backup/blob/main/js%E7%AC%94%E8%AE%B0/js%E7%AC%94%E8%AE%B0day3.md)
+接day3内容[js笔记day3](./js笔记day3.md)
 ## 14) 函数
 ### 1. 函数的使用
 ```js

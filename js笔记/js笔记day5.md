@@ -1,5 +1,4 @@
-接day4内容：[[js笔记day4]]
-GitHub外部链接：[js笔记day4](https://github.com/inabananami/obsidian-backup/blob/main/js%E7%AC%94%E8%AE%B0/js%E7%AC%94%E8%AE%B0day4.md)
+接day4内容：[js笔记day4](./js笔记day4)
 ## 15）对象
 ### 1. 对象声明语法
 ```js
