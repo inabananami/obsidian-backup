@@ -24,5 +24,8 @@
 		/* flex-direction: column-reverse; */
 	}
 ```
-## 3、主轴对齐方式
+# 3、主轴对齐方式
 ### 1）justify-content
+### 2）align-item
+# 4、flex-wrap
+控制flex容器下的盒子是否换行的属性。no-wrap为默认值，意思是不换行；设置为wrap为换行。
