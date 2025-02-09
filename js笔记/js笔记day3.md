@@ -1,4 +1,4 @@
-接day2内容：[js笔记day2](./js笔记day2.md)
+接day2内容：[js笔记day2 >](./js笔记day2.md)
 ### 11. for循环
 见下链接
 [退出循环](./js笔记day2.md#8.退出循环)

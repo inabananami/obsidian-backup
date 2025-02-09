@@ -1,4 +1,4 @@
-接day3内容[js笔记day3](./js笔记day3.md)
+接day3内容: [js笔记day3 >](./js笔记day3.md)
 ## 14) 函数
 ### 1. 函数的使用
 ```js
