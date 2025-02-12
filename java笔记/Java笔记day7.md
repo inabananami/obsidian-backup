@@ -121,3 +121,332 @@ public class LoginDemo {
 2. 示例方法中既可以直接访问类成员，也可以直接访问实例成员。
 3. 实例方法中可以出现this关键字，类方法中不可以出现this关键字。
 ## 5）static的应用知识：代码块
+**代码块分为两种：**
+- **静态代码块：**
+	- **格式：** static{}
+	- **特点：** 类加载时自动执行，由于类只会加载一次，所以静态代码块也只会执行一次
+	- **作用：** 完成类的初始化，例如：对类变量的初始化赋值。
+代码示例：
+类代码：
+```java
+package D5_block;
+
+public class Student {
+    static int num = 80;
+
+    //staticコードブロック
+    static {
+        System.out.println("staticブロックが実行された～～");
+    }
+}
+```
+主方法代码：
+```java
+public class Test {
+    public static void main(String[] args) {
+        System.out.println(Student.num);
+    }
+}
+```
+会先输出静态代码块里面的代码，再输出类变量。
+- **示例代码块：**
+	- **格式：** {}
+	- **特点：** 每次创建对象时，执行实例代码块，并在构造器前执行。
+	- **作用：** 和构造器一样，都是用来完成对象的初始化的，例如：对实例变量进行初始化赋值。
+代码示例：
+类代码：
+```java
+    {
+        System.out.println("実例ブロックが実行された～～");
+    }
+```
+主方法代码：
+```java
+    Student s1 = new Student();
+```
+在创建代码的时候，就会输出上述部分。
+## 6）static的应用知识：单例设计模式
+**什么是设计模式（Design pattern）？**
+- 一个问题通常有n种解法，其中肯定有一种解法是最优的，这个最优的解法被人总结出来了，称之为设计模式。
+- 设计模式有20多种，对应20多种软件开发中会遇到的问题。
+### 1. 饿汉式单例设计模式
+- 确保类只有一个对象，这个例子的设计模式也叫饿汉式设计（即拿到对象前就已经创建好了对象）。
+#### 写法：
+- 把类的构造器私有。
+- 定义一个类变量，记住类的一个对象。
+- 定义一个类方法，返回对象。
+**代码示例：**
+A类代码：
+```java
+package d6_singleInstance;
+
+public class A {
+    private static A a = new A();
+
+    //1. Aの構造器を必ずプライベートにする
+    private A() {
+        int num = 1;
+    }
+
+    //2. 一つのクラス方法を宣言して、クラスのオブジェクトを返す
+    public static A getObject() {
+        return a;
+    }
+}
+```
+主方法代码：
+```java
+package d6_singleInstance;
+
+public class Test1 {
+    public static void main(String[] args) {
+        A a1 = A.getObject();
+        A a2 = A.getObject();
+        //アドレスは同じ
+        System.out.println(a1);
+        System.out.println(a2);
+    }
+}
+```
+### 应用场景
+如windows的任务管理器，无论启动多少次，都只会生成一个窗口。
+### 2. 懒汉式单例设计模式
+- 拿对象时，才开始创建对象。
+**写法：**
+- 把类的构造器私有。
+- 定义一个类变量用于存储对象。
+- 提供一个类方法，保证返回的是同一个类对象。
+**代码示例：**
+懒汉式单例创建：
+```java
+package d6_singleInstance;
+
+public class B {
+    //クラス変数を宣言し、クラスを記憶する
+    private static B b;
+
+    //クラスの構造器をプライベートにする
+    private B() {
+        String name = "wan";
+    }
+
+    //クラス方法を宣言する。この方法は、
+    // 初回呼び出し時のみオブジェクトを作成し、
+    // その後の呼び出しでは同じオブジェクトで返す
+    public static B getInstance() {
+        if(b == null) {
+            b = new B();
+        }
+        return b;
+    }
+}
+```
+主方法：
+```java
+package d6_singleInstance;
+
+public class Test2 {
+    public static void main(String[] args) {
+        B b = B.getInstance();
+        B b2 = B.getInstance();
+        System.out.println(b == b2);
+    }
+}
+```
+程序返回true，可见内存地址仍是一样的。
+# 二、类的继承
+## 1）继承的定义
+矩形是一大类，长方体是基于矩形再加一个高，那么长方体就可以继承矩形的长宽。
+我们可以定义一个矩形类，再定义一个长方体类：
+矩形类：
+```java
+public class Square {
+    protected double length;
+    protected double width;
+    public Square() {
+        length = 1;
+        width = 1;
+    }
+    public Square(double l, double w) {
+        length = l;
+        width = w;
+    }
+    public void GetSquare() {
+        System.out.println("square is: "+length * width);
+    }
+}
+```
+长方体类：
+```java
+class Cuboid extends Square {
+    protected double height;
+    public Cuboid(double l, double w, double h) {
+        length = l;
+        width = w;
+        height = h;
+    }
+    public void GetVolumn() {
+        System.out.printf("volumn is: %.2f ", height * length * width);
+    }
+}
+```
+主方法：
+```java
+public class ExtendDemo {
+    public static void main(String[] args) {
+        Square s = new Square(11.2, 11.3);
+        Cuboid c = new Cuboid(22.2, 33.3, 2.0);
+        s.GetSquare();
+        c.GetVolumn();
+    }
+}
+```
+## 2）权限修饰符
+各种权限修饰符的范围如表格：
+<table>
+	<thead>
+		<th>修饰符</th>
+		<th>在本类中</th>
+		<th>同一个包下的其他类里</th>
+		<th>任意包的子类里</th>
+		<th>任意包下的任意类里</th>
+	</thead>
+	<tbody>
+		<tr>
+			<td>private</td>
+			<td>√</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>缺省</td>
+			<td>√</td>
+			<td>√</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>protected</td>
+			<td>√</td>
+			<td>√</td>
+			<td>√</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>public</td>
+			<td>√</td>
+			<td>√</td>
+			<td>√</td>
+			<td>√</td>
+		</tr>
+	</tbody>
+</table>
+## 3）单继承，Object类
+### 1. 单继承
+Java只能**单继承**，Java中的类**不支持多继承**，但是**支持多层继承**。
+比如上述的Cuboid类并不能既继承Square类，又继承Triangle类。但是Square类可以被多个子类继承。
+### 2. object类
+object类是所有类的祖宗类。我们写的任何一个类，其实都是object类的子类或子孙类。
+## 4）方法重写
+- 当子类觉得父类中的某个方法不好用，或者无法满足自己的需求时，子类可以重写一个方法名称、参数列表一样的方法，去覆盖父类的这个方法，这就是方法重写。
+比如上述Cuboid类，我们可以再定义一个Square方法：
+```java
+    public void GetSquare() {
+        System.out.println("Cuboid square is: "+(length + width + height) * 2);
+    }
+```
+主方法写：
+```java
+    c.GetSquare();
+```
+程序输出的就是长方体的表面积了。
+包括常见的对toString()方法的重写（因为toString默认输出地址）。
+## 5）子类中访问其他成员的特点
+- 在子类方法中访问其他成员（成员变量，成员方法），是按照**就近原则的。**
+代码示例：
+```java
+package d12_extend_visit;  
+  
+public class F {  
+    String name = "name1";  
+    public void print1() {  
+        System.out.println("print1実行");  
+    }  
+}
+
+package d12_extend_visit;  
+  
+public class Z extends F {
+    String name = "name2";
+    public void showName() {
+        System.out.println(name);
+        //父クラスでnameを探す
+        System.out.println(super.name);
+    }
+}
+
+package d12_extend_visit;  
+  
+public class Test {  
+    public static void main(String[] args) {  
+        Z z = new Z();  
+        z.showName();  
+    }  
+}
+```
+可见，z优先输出“name2”。 如果非要使用父类中的name或者方法，则可以使用super来调用。
+## 6）子类构造器的特点
+### 1. 无参情况下
+```java
+class F {
+    public F() {
+        System.out.println("F occurred.");
+    }
+}
+
+class Z extends F {
+    public Z() {
+        //super()はお先に存在しているもの
+        super();
+        System.out.println("Z occurred.");
+    }
+    public Z(String name) {
+        //super()はお先に存在しているもの
+        super();
+        System.out.println("wow occurred.");
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        //父クラスの構造器を呼び出した上、子クラスのものを呼び出す
+        Z z = new Z();
+        Z z2 = new Z("wan");
+    }
+}
+```
+### 2. 有参情况下
+```java
+class F {
+    public F() {
+        System.out.println("F occurred.");
+    }
+    public F(String s, int i) {
+        System.out.println("occurred2");
+    }
+}
+class Z extends F {  
+    public Z() {  
+        //super()は指定された構造器を指すという役に立つ  
+        super("van", 18);  
+        System.out.println("Z occurred.");  
+    }   
+}
+public class Test {  
+    public static void main(String[] args) {  
+        //父クラスの構造器を呼び出した上、子クラスのものを呼び出す  
+        Z z = new Z();   
+    }  
+}
+```
