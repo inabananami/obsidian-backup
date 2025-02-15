@@ -304,7 +304,7 @@ public class Main {
 package D6_abstract_template;
 
 public abstract class People {
-    public void write() {
+    public final void write() {
         System.out.println("wordwordword");
         System.out.println("havehavehave");
         System.out.println(MainArticle());
@@ -326,3 +326,125 @@ public class Student extends People{
     }
 }
 ```
+老师子类：
+```java
+package D6_abstract_template;  
+  
+public class Teacher extends People {  
+    @Override  
+   public String MainArticle() {  
+       return "getgetgetgetmakemakemakemake";  
+   }  
+}
+```
+主方法：
+```java
+package D6_abstract_template;
+
+public class Test {
+    public static void main(String[] args) {
+        Teacher t = new Teacher();
+        Student s = new Student();
+        t.write();
+        System.out.println();
+        s.write();
+    }
+}
+```
+推荐使用final关键字加载人抽象类上，因为这块代码内容固定，不会动了
+# 四、接口
+## 1）接口概述
+- Java提供了一个关键字interface，用这个关键字我们可以定义出一个特殊的结构：接口。
+```java
+public interface InterFace {
+	//成员变量（常量）
+	//成员方法（抽象方法）
+}
+```
+- 注意：接口不能创建对象；接口是用来被类**实现**的，实现接口的类称为**实现类**。实现类必须要实现所有接口，否则实现类也必须是抽象类。
+ ```java
+ 修饰符 class 实现类 implements 接口1,接口2,接口3,... {}
+```
+- **一个类可以实现多个接口（接口可理解成干爹）**，实现类实现多个接口，必须重写完全部接口的全部抽象方法，否则实现类需要定义成抽象类。
+代码示例：
+接口A，B，C：
+```java
+package D7_interface;  
+package D7_interface;  
+package D7_interface;
+
+public interface A {  
+    //static finalを省略する  
+    String schoolName = "kurobaprogrammer";  
+  
+    //メンバー方法(抽象的な方法)  
+    void Test();  
+}
+public interface B {  
+    void TestB1();  
+    void TestB2();  
+}
+public interface C {  
+    void TestC1();  
+    void TestC2();  
+}
+```
+Union类：
+```java
+package D7_interface;  
+  
+public class Union implements A, B, C {  
+    @Override  
+    public void Test(){  
+        System.out.println("printA");  
+    }  
+    public void TestB1() {  
+        System.out.println("printB1");  
+    }  
+    public void TestB2() {  
+        System.out.println("printB2");  
+    }  
+    public void TestC1() {  
+        System.out.println("printC1");  
+    }  
+    public void TestC2() {  
+        System.out.println("printC2");  
+    }  
+}
+```
+主方法：
+```java
+package D7_interface;
+
+public class Test {
+    public static void main(String[] args) {
+        System.out.println(A.schoolName);
+
+        //オブジェクトを作成できない
+        //A a = new A();
+
+        Union union = new Union();
+        union.Test();
+        union.TestB1();
+        union.TestB2();
+        union.TestC1();
+        union.TestC2();
+    }
+}
+```
+## 2）接口的好处
+1. 使用接口有啥好处，第一个好处是什么？
+- 可以解决类单继承的问题，通过接口，我们可以让一个类有一个亲爹的同时，还可以找多个干爹去扩展自己的功能。
+2. 为什么我们要通过接口，也就是去找干爹，来扩展自己的功能呢？
+- 因为通过接口去找干爹，别人通过你implements的接口，就可以显性的知道你是谁，从而也就可以放心的把你当作谁来用了。
+3. 使用接口的第二个好处是什么？
+-  一个类我们说可以实现多个接口，同样，一个接口也可以被多个类实现的。这样做的好处是我们的程序就可以面向接口编程了，这样我们程序员就可以很方便的灵活切换各种业务实现了。
+## 3）接口的综合案例
+需求：
+请设计一个班级学生的信息管理模块：学生的数据有：姓名、性别、成绩。
+- 功能1：要求打印出全班学生的信息；
+- 功能2：要求打印出全班学生的平均成绩。
+注意！以上功能的业务实现是有多套方案的，比如：
+- 第1套方案：能打印出班级全部学生的信息；能打印班级全部学生的平均分。
+- 第2套方案：能打印出班级全部学生的信息（包含男女人数）；能打印班级全部学生的平均分（要求是去掉最高分、最低分）。
+要求：系统可以支持灵活的切换这些实现方案。
