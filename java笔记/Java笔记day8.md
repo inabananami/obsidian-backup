@@ -448,3 +448,133 @@ public class Test {
 - 第1套方案：能打印出班级全部学生的信息；能打印班级全部学生的平均分。
 - 第2套方案：能打印出班级全部学生的信息（包含男女人数）；能打印班级全部学生的平均分（要求是去掉最高分、最低分）。
 要求：系统可以支持灵活的切换这些实现方案。
+代码如下：
+接口Mode1：
+```java
+package D8_interface_project;
+
+public interface Mode1 {
+    void printAll();
+    void printAverage();
+}
+```
+接口Mode2：
+```java
+package D8_interface_project;
+
+public interface Mode2 {
+    void printAll2();
+    void printAverage2();
+}
+```
+Student类：
+```java
+package D8_interface_project;
+
+public class Student implements Mode1,Mode2{
+    protected String[] name = new String[4];
+    protected String[] sex = new String[4];
+    protected int[] point = new int[4];
+
+    public Student() {
+        name[0] = "张三";
+        name[1] = "李四";
+        name[2] = "王五";
+        name[3] = "赵六";
+        sex[0] = "male";
+        sex[1] = "female";
+        sex[2] = "male";
+        sex[3] = "female";
+        point[0] = 90;
+        point[1] = 80;
+        point[2] = 70;
+        point[3] = 60;
+    }
+    public Student(String[] name,String[] sex, int[] point) {
+        this.name = name;
+        this.sex = sex;
+        this.point = point;
+    }
+    @Override
+    public void printAll() {
+        for(int i = 0; i < name.length; i++) {
+            System.out.print("Name: " + name[i]);
+            System.out.print(" Sex: " + sex[i]);
+            System.out.print(" Point: " + point[i]);
+            System.out.println();
+        }
+    }
+    public void printAverage(){
+        int avg = 0;
+        for(int i = 0; i < point.length; i++) {
+            avg += point[i];
+        }
+        avg /= point.length;
+        System.out.println(avg);
+    }
+
+    public void printAll2() {
+        int maleCount = 0, femaleCount = 0;
+        for (int i = 0; i < name.length; i++) {
+            if(sex[i].equals("male")) {
+                maleCount++;
+            }
+            else if (sex[i].equals("female")) {
+                femaleCount++;
+            }
+            System.out.print("Name: " + name[i]);
+            System.out.print(" Sex: " + sex[i]);
+            System.out.print(" Point: " + point[i]);
+            System.out.println();
+        }
+        System.out.println("male count: "+maleCount);
+        System.out.println("female count: "+femaleCount);
+    }
+
+    public void printAverage2() {
+        int min = point[0], max = point[0], sum = 0;
+        for (int i = 0; i < point.length - 1; i++) {
+            if (point[i] <= point[i + 1]) {
+                max = point[i + 1];
+            }
+            if (point[i] >= point[i + 1]) {
+                min = point[i + 1];
+            }
+        }
+        for (int i = 0; i < point.length; i++) {
+            sum += point[i];
+            System.out.print(point[i]+" ");
+        }
+        sum -= max;
+        sum -= min;
+        System.out.println("average except max and min: " + sum/(point.length - 2));
+    }
+}
+```
+主方法：
+```java
+package D8_interface_project;
+import java.util.Scanner;
+
+public class Test {
+    public static void main(String[] args) {
+        int flag = 1;
+        Student student = new Student();
+        Scanner scanner = new Scanner(System.in);
+        while(flag != 0) {
+            System.out.println("输入1为功能1，输入2为功能2，输入0退出程序");
+            flag = scanner.nextInt();
+            switch (flag) {
+                case 1:
+                    student.printAll();
+                    student.printAverage();
+                    break;
+                case 2:
+                    student.printAll2();
+                    student.printAverage2();
+            }
+        }
+    }
+}
+```
+通过接口，以及类中对接口的全部实现，我们可以实现模块化功能。
