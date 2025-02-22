@@ -1,4 +1,4 @@
-[接Java笔记day8 >](./Java笔记day8)
+[接Java笔记day8 >](./Java笔记day8.md)
 # 一、常用API
 ## 1）StringBuilder类
 StringBuilder代表可变字符串对象，相当于一个容器，它里面的字符串是可以改变的。
