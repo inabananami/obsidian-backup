@@ -1,0 +1,30 @@
+<h1 id="触发弹性盒子">1、触发弹性盒子</h1>
+<p>给父元素添加display属性；取值flex ###
+1）父元素触发弹性盒子之后，子元素默认横向显示
+父元素触发弹性盒子之后，子元素会横向显示，类似于浮动，但不是浮动，与浮动没有关系
+不会影响孙子辈分的元素 ###
+2）触发弹性盒子之后，会改变子元素的元素类型，会让子元素变成块级元素 ###
+3) 触发弹性盒子之后，如果只有一个子元素，给子元素添加margin:
+auto的时候，子元素会位于水平垂直居中位置显示。 # 2、修改主轴方向
+如以下代码所示：</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode css"><code class="sourceCode css"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">.bigbox</span> {</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>        <span class="kw">width</span><span class="ch">:</span> <span class="dv">500</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>        <span class="kw">height</span><span class="ch">:</span> <span class="dv">500</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>        <span class="kw">border</span><span class="ch">:</span> <span class="dv">10</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">gray</span><span class="op">;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        <span class="kw">margin</span><span class="ch">:</span> <span class="dv">100</span><span class="dt">px</span> <span class="bu">auto</span><span class="op">;</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        <span class="kw">display</span><span class="ch">:</span> <span class="dv">flex</span><span class="op">;</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        <span class="co">/* 横に順方向でディスプレイ （よく使う）*/</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        <span class="kw">flex-direction</span><span class="ch">:</span> <span class="dv">row</span><span class="op">;</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>        <span class="co">/* 横にレバースでディスプレイ */</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>        <span class="co">/* flex-direction: row-reverse; */</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>        <span class="co">/* 縦に順方向でディスプレイ （よく使う）*/</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>        <span class="co">/* flex-direction: column; */</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>        <span class="co">/* 縦にレバースでディスプレイ */</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>        <span class="co">/* flex-direction: column-reverse; */</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    }</span></code></pre></div>
+<h1 id="主轴对齐方式">3、主轴对齐方式</h1>
+<h3 id="justify-content">1）justify-content</h3>
+<h3 id="align-item">2）align-item</h3>
+<h1 id="flex-wrap">4、flex-wrap</h1>
+<p>控制flex容器下的盒子是否换行的属性。no-wrap为默认值，意思是不换行；设置为wrap为换行。</p>

@@ -1,5 +1,7 @@
 [接Java笔记day9 >](./Java笔记day9.md)
 
+### 学习内容
+本日主要学习了JDK8新时间。
 ## 一、JDK8日期
 ## 1）JDK8日期、时间、日期时间
 DK8新增的日期类分得更细致一些，比如表示年月日用LocalDate类、表示时间秒用LocalTime类、而表示年月日时分秒用LocalDateTime类等；除了这些类还提供了对时区、时间间隔进行操作的类等。它们几乎把对日期/时间的所有操作都通过了API方法，用起来特别方便
@@ -169,20 +171,81 @@ public class Test {
 ```
 
 ## 2）JDK8日期（时区）
-由于世界各个国家与地区的经度不同，各地区的时间也有所不同，因此会划分为不同的时区。每一个时区的时间也不太一样
+### 1. ZoneId
+由于世界各个国家与地区的经度不同，各地区的时间也有所不同，因此会划分为不同的时区。每一个时区的时间也不太一样。
+我们可以用ZoneId获取时区。
 代码示例：
 ```java
+	//システムディフォルトの時間帯を獲得する
+	ZoneId zoneId = ZoneId.systemDefault();
+	System.out.println(zoneId.getId());
 
+	//javaがサポートしているすべての時間帯を獲得する
+	System.out.println(zoneId.getAvailableZoneIds());
+
+	//ある時間帯idをZoneIdオブジェクトをカプセル化にする
+	ZoneId zoneId1 = ZoneId.of("Japan");
+	System.out.println(zoneId1.getId());
 ```
+### 2. ZoneDateTime
+输出对应时区的时间。
+代码示例：
+```java
+	//時間帯をつけている時間
+	ZonedDateTime now = ZonedDateTime.now(zoneId1);
+	System.out.println(now);
 
+	//世界標準時を獲得する
+	ZonedDateTime now1 = ZonedDateTime.now(Clock.systemUTC());
+	System.out.println(now1);
+
+	//システムディフォルトの時間帯のZonedDateTimeオブジェクトを獲得する
+	ZonedDateTime now2 = ZonedDateTime.now();
+	System.out.println(now2);
+```
 ## 3）JDK8日期（Instant类）
 通过获取Instant的对象可以拿到此刻的时间，该时间由两部分组成：从1970-01-01 00:00:00 开始走到此刻的总秒数+不够1秒的纳秒数
 代码示例：
 ```java
+package D5_JDK8_Instant;
+import java.time.Instant;
 
+public class Test {
+    public static void main(String[] args) {
+        //Instantオブジェクトを作成し、今の時間情報を獲得する
+        Instant now = Instant.now();
+
+        //総秒数を獲得する
+        long second = now.getEpochSecond();
+        System.out.println(second);
+
+        //一秒を足りないのナノ秒数
+        int nano = now.getNano();
+        System.out.println(nano);
+        System.out.println(now);
+    }
+}
 ```
 ## 4）JDK8日期（格式化器）
-它可以从来对日期进行格式化和解析。它代替了原来的SimpleDateFormat类
+它可以从来对日期进行格式化和解析。它代替了原来的SimpleDateFormat类，可以使得代码更加安全。
 ```java
-
+//DateTimeFormatterオブジェクトを作成する  
+DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy年MM月dd日 HH:mm:ss");  
+  
+//時間をフォーマットにさせる  
+LocalDateTime ldt = LocalDateTime.now();  
+System.out.println(ldt);  
+  
+String format = formatter.format(ldt);  
+System.out.println(format);  
+  
+//もう一つの方案である  
+String format2 = ldt.format(formatter);  
+System.out.println(format2);  
+  
+//時間を解析する：時間の解析は一般的にLocalDateTimeが提供する解析方法を使用して解析することである。  
+String dateStr = "2029年12月12日 12:12:12";  
+LocalDateTime date = LocalDateTime.parse(dateStr, formatter);  
+System.out.println(date);
 ```
+## 5）Period

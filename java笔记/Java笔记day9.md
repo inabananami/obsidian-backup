@@ -1,4 +1,5 @@
 [接Java笔记day8 >](./Java笔记day8.md)
+
 # 一、常用API
 ## 1）StringBuilder类
 StringBuilder代表可变字符串对象，相当于一个容器，它里面的字符串是可以改变的。
@@ -326,3 +327,91 @@ public class Test {
 }
 ```
 ## 9）SimpleDateFormat案例
+秒杀案例。
+代码如下：
+```java
+package D9_TimeProject;  
+import java.sql.SQLOutput;  
+import java.text.ParseException;  
+import java.text.SimpleDateFormat;  
+import java.util.Date;  
+  
+public class Test {  
+    public static void main(String[] args) throws ParseException {  
+        String start = "2024年11月11日 0:0:0";  
+        String end = "2024年11月11日 0:10:0";  
+        String xj = "2024年11月11日 0:01:18";  
+        String xp = "2024年11月11日 0:10:51";  
+  
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss");  
+        Date startDate = sdf.parse(start);  
+        Date endDate = sdf.parse(end);  
+        Date xjDate = sdf.parse(xj);  
+        Date xpDate = sdf.parse(xp);  
+  
+        if(!xjDate.after(endDate) && !xjDate.before(startDate)) {  
+            System.out.println("小贾抢到了");  
+        }  
+        else {  
+            System.out.println("小贾没抢到");  
+        }  
+        if(!xpDate.after(endDate) && !xpDate.before(startDate)) {  
+            System.out.println("小皮抢到了");  
+        }  
+        else {  
+            System.out.println("小皮没抢到");  
+        }  
+    }  
+}
+```
+## 10）Calendar类
+### 为什么要学习Calender？
+- 若需求是将2024年09月10日增加一个月，那么Calender能比Date更加简便地增加月份。
+**注意：需要导入java.util.Calendar才能使用。**
+代码示例：
+```java
+package D10_Calender;
+
+import java.util.Calendar;
+import java.util.Date;
+
+public class Test {
+    public static void main(String[] args) {
+        //システムの時間に対する日付オブジェクトを獲得する
+        Calendar now = Calendar.getInstance();
+        System.out.println(now);
+        System.out.println();
+
+        //日付のある情報を獲得する
+        int year = now.get(Calendar.YEAR);
+        System.out.println(year);
+        int month = now.get(Calendar.MONTH);
+        System.out.println(month);
+        int dayOfMonth = now.get(Calendar.DAY_OF_MONTH);
+        System.out.println(dayOfMonth);
+        System.out.println();
+
+        //Dateオブジェクトを獲得する
+        Date d = now.getTime();
+        System.out.println(d);
+        System.out.println();
+
+        //時間のミリ秒データを獲得する
+        long time = now.getTimeInMillis();
+        System.out.println(time);
+        System.out.println();
+
+        //Calenderのある情報を直す(Calender.MONTHの実際データは、０から始まるものだ)
+        now.set(Calendar.MONTH, 3);
+        System.out.println(now.get(Calendar.MONTH));
+        System.out.println();
+
+        //Calenderのある情報を足す、割る
+        System.out.println(now.get(Calendar.DAY_OF_YEAR));
+        now.add(Calendar.DAY_OF_YEAR, 100);
+        System.out.println(now.get(Calendar.DAY_OF_YEAR));
+        now.add(Calendar.DAY_OF_YEAR, -100);
+        System.out.println(now.get(Calendar.DAY_OF_YEAR));
+    }
+}
+```
