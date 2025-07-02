@@ -55,7 +55,7 @@
 `<p>`标签为段落标签，用于区分不同的段落。
 ### 2) 行内元素与块元素
 
-```
+```html
 <!DOCTYPE html>
 
 <html lang="zh-CN">
@@ -147,7 +147,7 @@
 如实例代码所示，块级元素内可以出现块级元素与行内元素，但是行内元素中不得出现块级元素，`<h1>`~`<h6>`不能相互嵌套，`<p>`标签中不能出现块级元素。
 ### 3）HTML主要的文本标签
 下列为实例代码：
-```
+```html
 <!DOCTYPE html>
 
 <html lang="zh-CN">
@@ -208,7 +208,7 @@
 `<em>`标签也为强调文本，但比起`<strong>`标签，更加富有感情。
 ## 3、图片标签
 以下是实例代码：
-```
+```html
 <!DOCTYPE html>
 
 <html lang="zh-CN">
@@ -247,7 +247,7 @@
 也可以在一个网页中跳转到不同的页面，如 `<a href="./9.html排版标签"> 快开始学html！</a>`是跳转到我的另一个html实例。
 ### 2）跳转文件
 以下是实例：
-```
+```html
 <!DOCTYPE html>
 
 <html lang="zh-CN">
@@ -397,7 +397,7 @@
 第二种锚点为单独创建一个`<a>`标签，并使用`name`属性标注。这种锚点会造成尺寸方面的问题，**故不推荐使用。**
 ### 4）唤起指定应用
 代码示例：
-```
+```html
 <!DOCTYPE html>
 
 <html lang="zh-CN">
@@ -426,7 +426,7 @@
 ## 5、列表
 ### 1）基础
 代码示例：
-```
+```html
 <!DOCTYPE html>
 
 <html lang="zh-CN">
@@ -490,7 +490,7 @@
 其中`<ol>`标签接`<li>`标签为数字序号列表，`<ul>`标签接`<li>`标签为点列表，`<dl>`接`<dt>`是顶格的列表，`<dd>`则为缩进一格的列表项。都可以使用css更换样式，比如删除数字，删除点。、
 ### 2）注意事项
 代码示例：
-```
+```html
 <!DOCTYPE html>
 
 <html lang="zh-CN">
@@ -596,7 +596,7 @@
 表格由标题、头部、主体、脚注构成。表尾脚注可以视情况省略。
 #### （1）表格标题和头部
 代码示例：
-```
+```html
         <!-- 表格标题 -->
 
         <caption>乐队信息</caption>
@@ -728,7 +728,7 @@ html中，对齐控制属性为`align`和`valign`。分别为水平方向对齐�
 ## 7、表单 
 ### 1）基本结构
 代码示例：
-```
+```html
     <form action="https://www.baidu.com/s">
 
         <input type="text" name="wd">
@@ -740,7 +740,7 @@ html中，对齐控制属性为`align`和`valign`。分别为水平方向对齐�
 其中`<form>`标签是跳转到指定网站搜索指定内容，与`<input>`标签中的`name`属性配合，可以将用户输入的内容提交到对应网站并直接搜索内容。
 ### 2）文本框和密码框
 代码示例：
-```
+```html
     <form action="https://search.jd.com/search">
 
         <!-- 控件1：value，表示input框内的默认信息 -->
@@ -757,7 +757,7 @@ html中，对齐控制属性为`align`和`valign`。分别为水平方向对齐�
  如注释所示。
 ### 3）单选框与多选框
 代码示例：
-```
+```html
         性别：
 
         <input type="radio" name="gender" value="male">男
@@ -798,7 +798,7 @@ html中，对齐控制属性为`align`和`valign`。分别为水平方向对齐�
 文本域的标签是`<textarea>`用于输入比input框更多的文本。其中`cols`和`rows`可以设置初始列数和行数。
 #### （2）下拉框
 代码示例：
-```
+```html
         籍贯：
 
         <select name="place">
@@ -818,7 +818,7 @@ html中，对齐控制属性为`align`和`valign`。分别为水平方向对齐�
 `disabled`可以禁用某个表单控件。
 ### 9）label标签
 示例代码：
-```
+```html
         <input id="nan" type="radio" name="gender" value="male">
 
         <label for="nan">男</label>
