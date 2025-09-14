@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "8824ebbd132074f0",
+        "id": "d51fd7d828bd2b82",
         "type": "tabs",
         "children": [
           {
-            "id": "40654058891fc0f8",
+            "id": "3400675394cb1dc4",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "js笔记/js笔记.md",
+                "file": "Java Web笔记/11.关于CORS.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "js笔记"
+              "title": "11.关于CORS"
             }
           }
         ]
@@ -40,10 +40,11 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
+                "sortOrder": "alphabetical",
+                "autoReveal": false
               },
               "icon": "lucide-folder-closed",
-              "title": "ファイルエクスプローラ"
+              "title": "文件列表"
             }
           },
           {
@@ -77,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 205.5,
+    "width": 298.5,
     "collapsed": true
   },
   "right": {
@@ -140,10 +141,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "js笔记/js笔记.md"
+                "file": "Java Web笔记/1.MySQL准备.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "js笔记のアウトライン"
+              "title": "1.MySQL准备 的大纲"
             }
           }
         ],
@@ -151,20 +155,26 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:クイックスイッチャーを開く": false,
-      "graph:グラフビューを開く": false,
-      "canvas:新規キャンバスを作成": false,
-      "daily-notes:今日のデイリーノートを開く": false,
-      "templates:テンプレートを挿入": false,
-      "command-palette:コマンドパレットを開く": false
+      "bases:创建新数据库": false,
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false
     }
   },
-  "active": "40654058891fc0f8",
+  "active": "3400675394cb1dc4",
   "lastOpenFiles": [
+    "Java Web笔记/11.关于CORS.md",
+    "Java Web笔记/10.Anki日语背词系统.md",
+    "vue3笔记",
+    "Java Web笔记/1.MySQL准备.md",
     "obsidian-backup/text-folder/js笔记整合/js笔记.md",
     "obsidian-backup/text-folder/css笔记整合/色环图.png",
     "obsidian-backup/text-folder/css笔记整合/CSS笔记（下）.md",
